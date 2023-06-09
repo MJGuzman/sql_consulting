@@ -33,25 +33,19 @@ ORDER BY MargenGanancias DESC
 
 -- Producto más vendido en cada local
 
-SELECT DISTINCT l.nombre AS local, p.nombre AS producto, vd.total_vendido as total
-FROM local l
-JOIN (
-    SELECT v.id_local, vd.id_producto, SUM(vd.cantidad) AS total_vendido
-    FROM ventaDetalle vd
-    JOIN venta v ON vd.id_venta = v.id_venta
-    GROUP BY v.id_local, vd.id_producto
-    HAVING SUM(vd.cantidad) = (
-        SELECT MAX(total_vendido)
-        FROM (
-            SELECT v.id_local, vd.id_producto, SUM(vd.cantidad) AS total_vendido
-            FROM ventaDetalle vd
-            JOIN venta v ON vd.id_venta = v.id_venta
-            GROUP BY v.id_local, vd.id_producto
-        ) AS subquery
-        WHERE subquery.id_local = v.id_local
-    )
-) AS vd ON l.id_local = vd.id_local
-JOIN producto p ON vd.id_producto = p.id_producto
+SELECT l.Nombre AS local, p.Nombre AS Producto, d.TotalVendido
+FROM
+    local l
+    CROSS APPLY (
+        SELECT TOP 1 d.ID_Producto, SUM(d.Cantidad) AS TotalVendido
+        FROM
+            Venta v
+            INNER JOIN VentaDetalle d ON v.ID_Venta = d.ID_Venta
+        WHERE v.ID_Local = l.ID_Local AND v.Fecha BETWEEN DATEADD(DAY, -30, CAST(GETDATE() AS DATE)) AND CAST(GETDATE() AS DATE)
+        GROUP BY d.ID_Producto
+        ORDER BY SUM(d.Cantidad) DESC
+    ) d
+INNER JOIN Producto p ON d.ID_Producto = p.ID_Producto;
 
 
 
