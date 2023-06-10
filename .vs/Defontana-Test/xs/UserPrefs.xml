@@ -1,4 +1,33 @@
 ﻿<Properties StartupConfiguration="{16FC4C6C-0805-4878-833D-2141C405CE94}|Default">
-  <MonoDevelop.Ide.ItemProperties.Defontana-Test FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Defontana-Test/Program.cs">
+    <Files>
+      <File FileName="Defontana-Test/Program.cs" Line="75" Column="43" />
+      <File FileName="appsettings.json" Line="7" Column="1" />
+      <File FileName="Defontana-Test/Models/Producto.cs" Line="1" Column="1" />
+      <File FileName="Defontana-Test/Models/PruebaContext.cs" Line="31" Column="1" />
+      <File FileName="Defontana-Test/Models/VentaDetalle.cs" Line="1" Column="1" />
+      <File FileName="Defontana-Test/Queries.sql" Line="55" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Defontana-Test" expanded="True">
+            <Node name="Defontana-Test" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Defontana-Test PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/misaelguzman/Projects/Defontana-Test/Defontana-Test/Program.cs" relfile="Defontana-Test/Program.cs" line="88" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
